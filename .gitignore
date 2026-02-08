@@ -1,0 +1,11 @@
+# Planning docs (local only)
+.planning/*
+!.planning/codebase/
+
+# Build artifacts
+sneaker
+*.exe
+*.test
+
+# Database files
+*.db

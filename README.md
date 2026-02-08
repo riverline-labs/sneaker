@@ -159,6 +159,50 @@ Web Frontend  ───────┘
 
 **Important:** Sneaker does not handle TLS. Deploy behind a TLS-terminating reverse proxy (nginx, Caddy, etc.) for production use.
 
+## Self-Hosting
+
+### Docker (recommended)
+
+```bash
+docker run -p 7657:7657 -v sneaker-data:/data ghcr.io/riverline-labs/sneaker
+```
+
+Or build the image yourself:
+
+```bash
+docker build -t sneaker .
+docker run -p 7657:7657 -v sneaker-data:/data sneaker
+```
+
+### Docker Compose
+
+```yaml
+services:
+  sneaker:
+    image: ghcr.io/riverline-labs/sneaker
+    ports:
+      - "7657:7657"
+    volumes:
+      - sneaker-data:/data
+    restart: unless-stopped
+
+volumes:
+  sneaker-data:
+```
+
+### From Source
+
+```bash
+go build -o sneaker .
+./sneaker provision
+```
+
+### Production Checklist
+
+- Deploy behind a TLS-terminating reverse proxy (Caddy, nginx, etc.)
+- Mount a persistent volume at `/data` for the SQLite database
+- Back up `/data/sneaker.db` regularly
+
 ## Development
 
 ```bash
@@ -182,4 +226,4 @@ go test -cover ./...
 
 ## License
 
-All rights reserved.
+MIT

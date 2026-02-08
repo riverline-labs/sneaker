@@ -1,6 +1,5 @@
 # Planning docs (local only)
-.planning/*
-!.planning/codebase/
+.planning/
 
 # Build artifacts
 sneaker

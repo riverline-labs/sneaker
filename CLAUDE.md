@@ -6,7 +6,7 @@ Sneaker is a self-hosted, one-time secret exchange tool. Secrets are end-to-end 
 
 ## Codebase Documentation
 
-Detailed codebase analysis is in `.planning/codebase/`:
+Detailed codebase analysis is in `docs/`:
 
 - `STACK.md` - Languages, runtime, frameworks, dependencies
 - `ARCHITECTURE.md` - System design, layers, data flow, entry points

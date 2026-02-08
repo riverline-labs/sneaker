@@ -139,7 +139,7 @@ Open the URL in a browser, or:
 ```
 CLI (cobra)  ──▶  HTTP API  ──▶  Store (SQLite)
                      │
-Web Frontend  ──────┘
+Web Frontend  ───────┘
 ```
 
 - **CLI commands** handle encryption/decryption using the AGE library
